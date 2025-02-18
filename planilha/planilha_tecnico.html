@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .url {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            font-size: 18px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+        .url a {
+            color: #01abb1;
+            text-decoration: none;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #01abb1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #01abb1;
+        }
+        img {
+            width: 80%;
+            height: auto;
+            max-height: 500px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="url">
+        <a href="https://colab.research.google.com/drive/1GeBVorkbUNyMxi6GCprZS68beO7Gi6yG?usp=sharing" target="_blank">CLIQUE AQUI PARA EXECUTAR</a>
+    </div>
+    <div class="container">
+        <input type="text" id="serialNumber" placeholder="Insira aqui o número de série">
+        <br>
+        <button onclick="upload()">Upload</button>
+        <br>
+        <img src="vyttra_logo.png" alt="Ivyttra_logo">
+    </div>
+    <script>
+        function upload() {
+            let serial = document.getElementById('serialNumber').value;
+            if (serial.trim() === "") {
+                alert("Por favor, insira um número de série.");
+                return;
+            }
+            alert("Upload iniciado para o número de série: " + serial);
+        }
+    </script>
+</body>
+</html>
